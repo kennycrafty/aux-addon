@@ -65,6 +65,16 @@ function refresh_button_click()
 	refresh = true
 end
 
+function update_start_price_visibility()
+    if start_equals_buyout_checkbox:GetChecked() then
+        unit_start_price_input:Hide()
+        start_price_percentage:Hide()
+    else
+        unit_start_price_input:Show()
+        start_price_percentage:Show()
+    end
+end
+
 function tab.OPEN()
     frame:Show()
     update_inventory_records()
@@ -290,7 +300,7 @@ function update_item_configuration()
         hide_checkbox:Hide()
         vendor_price_label:Hide()
     else
-		unit_start_price_input:Show()
+        update_start_price_visibility()
         unit_buyout_price_input:Show()
         stack_size_slider:Show()
         stack_count_slider:Show()
