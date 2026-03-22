@@ -350,13 +350,11 @@ function update_item_configuration()
 end
 
 function undercut(record, stack_size, stack)
-    local price = ceil(record.unit_price * (stack and record.stack_size or stack_size))
-    if not record.own then
-        if aux.account_data.undercut then
-            price = price - 1
-        end
+    if record.own then
+        return record.unit_price
+    else
+        return record.unit_price - 1
     end
-    return price / stack_size
 end
 
 function quantity_update(maximize_count)
