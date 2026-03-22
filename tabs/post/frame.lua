@@ -264,7 +264,14 @@ function aux.handle.INIT_UI()
         hide_checkbox = checkbox
     end
     do
-        local editbox = gui.editbox(frame.parameters)
+        local checkbox = gui.checkbox(frame.parameters)
+        checkbox:SetPoint('RIGHT', hide_checkbox, 'LEFT', -135, 0)
+        local label = gui.label(checkbox, gui.font_size.small)
+        label:SetPoint('LEFT', checkbox, 'RIGHT', 4, 1)
+        label:SetText('Starting = Buyout')
+        start_equals_buyout_checkbox = checkbox
+    end
+    do        local editbox = gui.editbox(frame.parameters)
         editbox:SetPoint('TOPRIGHT', -71, -60)
         editbox:SetWidth(180)
         editbox:SetHeight(22)
