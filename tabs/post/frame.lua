@@ -266,15 +266,7 @@ function aux.handle.INIT_UI()
     do
         local checkbox = gui.checkbox(frame.parameters)
         checkbox:SetPoint('RIGHT', hide_checkbox, 'LEFT', -135, 0)
-        checkbox:SetScript('OnClick', function()
-            if this:GetChecked() then
-                unit_start_price_input:Hide()
-                start_price_percentage:Hide()
-            else
-                unit_start_price_input:Show()
-                start_price_percentage:Show()
-            end
-        end)
+        checkbox:SetScript('OnClick', update_start_price_visibility)
         local label = gui.label(checkbox, gui.font_size.small)
         label:SetPoint('LEFT', checkbox, 'RIGHT', 4, 1)
         label:SetText('Starting = Buyout')
