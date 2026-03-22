@@ -198,7 +198,7 @@ end
 
 function post_auctions()
 	if selected_item then
-        local unit_start_price = get_unit_start_price()
+        local unit_start_price = start_equals_buyout_checkbox:GetChecked() and get_unit_buyout_price() or get_unit_start_price()
         local unit_buyout_price = get_unit_buyout_price()
         local stack_size = stack_size_slider:GetValue()
         local stack_count
