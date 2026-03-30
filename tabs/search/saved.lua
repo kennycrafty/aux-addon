@@ -144,7 +144,7 @@ function enable_auto_buy(search)
 		if getn(queries) > 1 then
 			aux.print('Error: Auto Buy does not support multi-queries')
 		elseif aux.size(queries[1].blizzard_query) > 0 and not filter_util.parse_filter_string(search.filter_string).blizzard.exact then
-			aux.print('Error: Auto Buy does not support Blizzard filters')
+			aux.print('Error: Auto Buy does not support Blizzard filters. It is recommended to match exactly one item via /exact after item name in search command!')
 		else
 			search.auto_buy = true
 		end
