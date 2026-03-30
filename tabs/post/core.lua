@@ -267,7 +267,7 @@ function validate_parameters()
         post_button:Disable()
         return
     end
-    if get_unit_buyout_price() > 0 and get_unit_start_price() > get_unit_buyout_price() then
+    if not start_equals_buyout_checkbox:GetChecked() and get_unit_buyout_price() > 0 and get_unit_start_price() > get_unit_buyout_price() then
         post_button:Disable()
         return
     end
